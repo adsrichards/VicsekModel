@@ -19,7 +19,7 @@ void Simulation(double eta, int N)
         state.step();
     }
     
-    // Measurment
+    // Measurement
     for(int i=0; i<mcs; i++)
     {
         state.step(); 
