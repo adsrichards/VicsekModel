@@ -5,7 +5,7 @@
 #include "State.h"
 #include "Measurement.h"
 
-void Simulation(double eta, int N)
+void simulation(double eta, int N)
 {
     State state(eta, N);
     Measurement measurement(eta, N);
@@ -23,7 +23,7 @@ void Simulation(double eta, int N)
     for(int i=0; i<mcs; i++)
     {
         state.step(); 
-        measurement.Measure(state);
+        measurement.measure(state);
     }
 }
 
@@ -32,5 +32,5 @@ int main()
     double eta = 0.2;
     int N = 400;
 
-    Simulation(eta, N);
+    simulation(eta, N);
 }

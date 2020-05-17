@@ -16,10 +16,10 @@ public:
 	Measurement(double eta, int N);
 	~Measurement();
 	
-	void Measure(State &state);
+	void measure(State &state);
 private:
     const static int binSize = 1000;
 	std::ofstream binOut;
 	std::string OUTFILE;
-	void Out();
+	void outputMeasurement();
 };

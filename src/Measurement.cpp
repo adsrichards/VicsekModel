@@ -16,7 +16,7 @@ Measurement::~Measurement()
 	binOut.close();
 }
 
-void Measurement::Measure(State &state)
+void Measurement::measure(State &state)
 {
 	double vx_av = 0;
     double vy_av = 0;
@@ -27,17 +27,17 @@ void Measurement::Measure(State &state)
     }
 	v_av += sqrt(vx_av*vx_av + vy_av*vy_av);
 	count++;
-	if(!(count % binSize)){Out();}
+	if(!(count % binSize)){outputMeasurement();}
 }
 
-void Measurement::Out()
+void Measurement::outputMeasurement()
 {
 	v_av /= (m_N*binSize);
 
-	std::vector<double> out;
-	out.push_back(v_av);  
+	std::vector<double> outData;
+	outData.push_back(v_av);  
 
-	while(!out.empty()){binOut << out.back() << ','; out.pop_back();}  
+	while(!outData.empty()){binOut << outData.back() << ','; outData.pop_back();}  
     binOut << '\n';
 
 	v_av = 0;
