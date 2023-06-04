@@ -1,5 +1,5 @@
 # Vicsek Model Simulation
 
-![](./img/demo.gif)
+Interactive javascript implementation of the Vicsek model of active matter. The level of random noise can be adjusted and new particles can be created by clicking within the window.
 
-![](./img/v_av.png?raw=true) ![](./img/v_ts.png?raw=true "Title")
+![](./img/demo.gif)
